@@ -1,3 +1,5 @@
+from apikey import api_key
+
 def main():
     print("Hello from mystockscreener!")
 
