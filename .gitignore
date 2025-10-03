@@ -11,3 +11,6 @@ wheels/
 
 # API key
 apikey.py
+
+#files
+scratch.py
