@@ -4,7 +4,16 @@
 A webscraper that I built to monitor a stocks website and email me when a new press release came out. The stock was highly volatile and would jump a lot based on news so it was important to me to be able to monitor it. While I don't trade the stock as much anymore I do still have the script running on my computer.
 
 ## Screener
-Still a work in progress but I have the basic format laid out. It includes a function to check a list of ickers to see if they have been delisted. It then removes any that throw errors and moves them into a fresh list and saves it as a .txt file. Eventually I want to be using this to find my stocks but I need to lock in my strategy and what I am looking for. As of right now I am having it print as a dataFrame but I think eventually I will export it to excel to have more freedom and readability for the 
+Still a work in progress but I have the basic format laid out. It includes a function to check a list of ickers to see if they have been delisted. It then removes any that throw errors and moves them into a fresh list and saves it as a .txt file. Eventually I want to be using this to find my stocks but I need to lock in my strategy and what I am looking for. As of right now I am having it print as a dataFrame but I think eventually I will export it to excel to have more freedom and readability. Below are a list of functions included in this file.
+
+### Screener
+Will do the actual screening and building of the data frame rows for stocks that fit the criteria. I have the basic structure but haven't chosen my screening criteria yet, that will be changing over time as I learn what I want to look for in stocks
+
+### check_list function
+Goes through a list of tickers and removes any that throw errors.
+
+### Sharpe Ratio
+Calculates the sharpe ratio for a given ticker.
 
 ### To improve:
 1. Speed, it's pretty slow and could be made more efficient, especially when I start screening for specific things. 

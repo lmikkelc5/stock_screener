@@ -3,7 +3,6 @@ import yfinance as yf
 import numpy as np
 from datetime import date, timedelta
 import warnings
-
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 def sharpe(ticker):
@@ -24,9 +23,3 @@ def sharpe(ticker):
     sharpe = (mean_return-risk_free)/volatility
 
     return float(sharpe)
-
-
-tickers = ['spy', 'aapl', 'prch', 'eose']
-for t in tickers:
-    sharpe_ratio = sharpe(t)
-    print(sharpe_ratio)
