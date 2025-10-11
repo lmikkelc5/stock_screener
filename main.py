@@ -1,4 +1,3 @@
-from apikey import api_key
 import screen
 import pandas as pd
 import warnings
@@ -6,7 +5,7 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 
 def main():
     #read in list 
-    run_check = input('Do you want to run the screener(Y or N): ')
+    run_check = input('Do you want to check your list(Y or N): ')
 
     with open('data/cleaned_list.txt', 'r') as f:
         ticks = [line.strip() for line in f.readlines()]
@@ -31,7 +30,7 @@ def main():
     main_df = pd.DataFrame()
 
     for item in lst:
-        new_row = screen.screener(item, api_key)
+        new_row = screen.screener(item)
         main_df = pd.concat([main_df, new_row], ignore_index=True)
 
     print(main_df)

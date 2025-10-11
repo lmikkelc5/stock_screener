@@ -36,7 +36,7 @@ def check_list(ticker_lst, verbose = True):
     return valid, invalid
 
 #main screener to check for and return df(1 row at a time) of wanted data
-def screener(ticker, api_key):
+def screener(ticker):
     #yfinance
     data = yf.Ticker(ticker)
     hist = data.history(period = '1d')
@@ -48,18 +48,20 @@ def screener(ticker, api_key):
         stock_price = None
     sector = data.info.get('sector', None)
     trailing_PE = data.info.get('trailingPE', None)
+    sharpe_ratio = sharpe(ticker)
 
     #make the df
     row = {
         'ticker' : [ticker],
         'sector' : [sector],
         'stock_price' : [stock_price],
-        'pe_ratio' : [trailing_PE]
+        'pe_ratio' : [trailing_PE],
+        'sharpe_ratio' : [sharpe_ratio]
     }
 
     #create df  
     df = pd.DataFrame(row) 
-
+ 
     #return the data
     return df
 
